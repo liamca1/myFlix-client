@@ -1,9 +1,8 @@
 import React from 'react';
 import { MovieCard } from '../movie-card/movie-card';
-import { MovieView } from '.../movie-view/movie-view';
+import { MovieView } from '../movie-view/movie-view';
 
-class MainView extends 
-React.Component {
+export class MainView extends React.Component {
 
     constructor(){
         super();
@@ -25,6 +24,7 @@ React.Component {
 
     render() {
         const { movies, selectedMovie } = this.state;
+        console.log("MOV", movies)
       
         if (movies.length === 0) return <div className="main-view">The list is empty!</div>;
       
@@ -41,5 +41,3 @@ React.Component {
         );
       }
 }
-
-export default MainView;
