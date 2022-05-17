@@ -20,10 +20,18 @@ export class MainView extends React.Component {
     }
 
     componentDidMount() {
+<<<<<<< Updated upstream
         axios
             .get('https://gathering-of-films.herokuapp.com/movies')
             .then((response) => {
                 this.setState({ movies: response.data });
+=======
+        axios.get('https://gathering-of-films.herokuapp.com/movies')
+            .then(response => {
+                this.setState({
+                    movies: response.data
+                });
+>>>>>>> Stashed changes
             })
             .catch(error => {
                 console.log(error);
@@ -51,6 +59,7 @@ export class MainView extends React.Component {
     }
 
     render() {
+<<<<<<< Updated upstream
         const { movies, selectedMovie, user, registered } = this.state;
 
         if (!registered) {
@@ -73,6 +82,12 @@ export class MainView extends React.Component {
         
         //if no movie is selected then show the list -
         //if a movie is selected then show the Movie View details
+=======
+        const { movies, selectedMovie } = this.state;
+    
+        if (movies.length === 0) return <div className="main-view" />;
+    
+>>>>>>> Stashed changes
         return (
           <div className="main-view">
             {selectedMovie ? (
