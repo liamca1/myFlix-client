@@ -2,13 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export class MovieCard extends React.Component {
   render() {
     const { movie, onMovieClick } = this.props;
 
     return (
-      <Card>
+      <Row xs={1} md={2} className="g-4">
+      {Array.from({ length: 1 }).map((_, idx) => (
+        <Col>
+        <Card border="dark">
         <Card.Img variant="top" src={movie.ImagePath} />
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>
@@ -16,6 +22,9 @@ export class MovieCard extends React.Component {
           <Button onClick={() => onMovieClick(movie)} variant="link">Open</Button>
         </Card.Body>
       </Card>
+      </Col>
+      ))}
+      </Row>
     );
   }
 }
