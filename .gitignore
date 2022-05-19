@@ -1,3 +1,13 @@
 node_modules
 .cache
 .parcel-cache
+index.css
+index.css.map
+login-view.css
+login-view.css.map
+main-view.css
+main-view.css.map
+movie-card.css
+movie-card.css.map
+movie-view.css
+movie-view.css.map

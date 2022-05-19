@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import "./login-view.scss";
+
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -11,10 +12,8 @@ export function LoginView(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(username, password);
-    // Send a request to the server for authentication, then call props.onLoggedIn(username)
     props.onLoggedIn(username);
   };
-
 
   return (
     <Form>
@@ -35,3 +34,11 @@ export function LoginView(props) {
     </Form>
   );
 }
+
+LoginView.propTypes = {
+  register: PropTypes.shape({
+      Username: PropTypes.string.isRequired,
+      Password: PropTypes.string.isRequired,
+  }),
+  onLoggedIn: PropTypes.func.isRequired
+};

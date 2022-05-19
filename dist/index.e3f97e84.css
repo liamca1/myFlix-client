@@ -1,0 +1,155 @@
+:root {
+  --fontsize-card-title: 20px;
+  --fontweight-card-title: 600;
+  --fontsize-card-button: 15px;
+  --fontweight-card-button: 400;
+}
+
+* {
+  box-sizing: border-box;
+  background-color: #e5383b;
+  font-family: League Spartan, sans-serif;
+}
+
+.card-body {
+  background-color: #e5383b;
+}
+
+#card-button {
+  color: #f1fffa;
+  margin: auto;
+}
+
+#movie-card {
+  text-align: center;
+  min-height: 500px;
+  border-width: 10px;
+  border-color: #e5383b;
+  margin-bottom: 50px;
+}
+
+#card-title {
+  font-size: var(--fontsize-card-title);
+  font-weight: var(--fontweight-card-title);
+  background-color: #e5383b;
+}
+
+#card-button {
+  font-size: var(--fontsize-card-button);
+  font-weight: var(--fontweight-card-button);
+}
+
+:root {
+  --fontsize-movie-title: 30px;
+  --fontweight-movie-title: 600;
+  --fontsize-movie-description: 20px;
+  --fontweight-movie-description: 400;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: League Spartan, sans-serif;
+}
+
+#movie-view {
+  min-height: 500px;
+  border-width: 10px;
+  border-color: #e5383b;
+}
+
+#movie-view-image {
+  margin-bottom: 20px;
+}
+
+#movie-title {
+  text-align: center;
+  font-size: var(--fontsize-movie-title);
+  font-weight: var(--fontweight-movie-title);
+  background-color: #e5383b;
+}
+
+#movie-description, #movie-director, #movie-genre {
+  font-size: var(--fontsize-movie-description);
+  font-weight: var(--fontweight-movie-description);
+  background-color: #e5383b;
+}
+
+#movie-view-button {
+  color: #f1fffa;
+  background-color: #e5383b;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  margin-right: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  color: #fff;
+  background-color: #353535;
+  font-family: league Spartan, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  color: #f1fffa;
+  background-color: #ecacda;
+  font-family: League Spartan, sans-serif;
+}
+
+:root {
+  --fontsize-navbar-brand: 30px;
+  --fontsize-navbar-link: 20px;
+  --fontweight-navbar-brand: 900;
+  --fontweight-navbar-link: 600;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: League Spartan, sans-serif;
+}
+
+#navbar {
+  background-color: #fcf951;
+  border: 5px #f1fffa;
+  margin-bottom: 10px;
+}
+
+#navbar-container {
+  background-color: #fcf951;
+  margin: 0;
+}
+
+#navbar-brand {
+  background-color: #fcf951;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+#nav {
+  background-color: #fcf951;
+}
+
+#nav-link {
+  color: #020402;
+  background-color: #fcf951;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+* {
+  box-sizing: border-box;
+  color: #fff;
+  background-color: #ecacda;
+  font-family: League Spartan, sans-serif;
+}
+
+.reistration-card, .card-title, .registration-form {
+  background-color: #e5383b;
+}
+
+#main-view {
+  margin-top: 100px;
+}
+
+/*# sourceMappingURL=index.e3f97e84.css.map */

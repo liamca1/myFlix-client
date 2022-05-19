@@ -1,0 +1,42 @@
+:root {
+  --fontsize-navbar-brand: 30px;
+  --fontsize-navbar-link: 20px;
+  --fontweight-navbar-brand: 900;
+  --fontweight-navbar-link: 600;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+#navbar {
+  background-color: #fcf951;
+  margin-bottom: 10px;
+  border: 5px;
+  border-color: #f1fffa;
+}
+
+#navbar-container {
+  background-color: #fcf951;
+  margin: 0;
+}
+
+#navbar-brand {
+  background-color: #fcf951;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+#nav {
+  background-color: #fcf951;
+}
+
+#nav-link {
+  background-color: #fcf951;
+  font-size: 20px;
+  font-weight: 600;
+  color: #020402;
+}
+/*# sourceMappingURL=navbar-view.css.map */
