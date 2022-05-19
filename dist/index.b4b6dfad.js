@@ -39294,6 +39294,7 @@ function LoginView(props) {
         props.onLoggedIn(username);
     };
     return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default, {
+        className: "login-view",
         children: [
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Group, {
                 className: "mb-3",
