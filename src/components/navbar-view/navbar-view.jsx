@@ -28,7 +28,7 @@ export function NavbarView({user}) {
     return (
         <Navbar id="navbar" fixed="top">
           <Container id="navbar-container">
-          <Navbar.Brand id="navbar-brand" href="#">gathering</Navbar.Brand>
+          <Navbar.Brand id="navbar-brand" href="#">gathering films</Navbar.Brand>
           <Nav id="nav" className="me-auto">
             <Nav.Link id="nav-link" href="#home">Account</Nav.Link>
             <Nav.Link id="nav-link" href="#features">Watchlist</Nav.Link>

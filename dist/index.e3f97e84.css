@@ -5,19 +5,8 @@
   --fontweight-card-button: 400;
 }
 
-* {
-  box-sizing: border-box;
-  background-color: #ecacda;
-  font-family: League Spartan, sans-serif;
-}
-
 .card-body {
-  background-color: #ecacda;
-}
-
-#card-button {
-  color: #f1fffa;
-  margin: auto;
+  background-color: #00f;
 }
 
 #movie-card {
@@ -27,64 +16,12 @@
   margin-bottom: auto;
 }
 
-#card-title {
-  font-size: var(--fontsize-card-title);
-  font-weight: var(--fontweight-card-title);
-  background-color: #ecacda;
+.movie-title {
+  padding-top: 15px;
 }
 
-#card-button {
-  font-size: var(--fontsize-card-button);
-  font-weight: var(--fontweight-card-button);
-  color: #fcf951;
-}
-
-.btn-link {
-  color: #fcf951;
-}
-
-:root {
-  --fontsize-movie-title: 30px;
-  --fontweight-movie-title: 600;
-  --fontsize-movie-description: 20px;
-  --fontweight-movie-description: 400;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: League Spartan, sans-serif;
-}
-
-#movie-view {
-  min-height: 500px;
-  border-width: 10px;
-  border-color: #e5383b;
-}
-
-#movie-view-image {
-  margin-bottom: 20px;
-}
-
-#movie-title {
-  text-align: center;
-  font-size: var(--fontsize-movie-title);
-  font-weight: var(--fontweight-movie-title);
-  background-color: #e5383b;
-}
-
-#movie-description, #movie-director, #movie-genre {
-  font-size: var(--fontsize-movie-description);
-  font-weight: var(--fontweight-movie-description);
-  background-color: #e5383b;
-}
-
-#movie-view-button {
-  color: #f1fffa;
-  background-color: #e5383b;
-  border: none;
-  margin-top: 20px;
-  margin-bottom: 100px;
-  margin-right: 20px;
+.movie-director {
+  border: 2px solid #fff;
 }
 
 * {
@@ -160,6 +97,10 @@
 .card-body {
   background-color: #ecacda;
 }
+
+
+
+
 
 
 

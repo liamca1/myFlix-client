@@ -9,40 +9,41 @@ $cardColor: #ecacda;
   --fontweight-card-button: 400;
 }
 
-* {
-  box-sizing: border-box;
-  font-family: "League Spartan", sans-serif;
-  background-color: $cardColor;
-}
+// * {
+//   box-sizing: border-box;
+//   font-family: "League Spartan", sans-serif;
+//   background-color: $cardColor;
+// }
 
 .card-body {
-    background-color: $cardColor;
+    background-color: blue;
 }
 
-#card-button {
-  margin: auto;
-  color: $textColor;
-}
+// #card-button {
+//   margin: auto;
+//   color: $textColor;
+// }
 
 #movie-card {
   text-align: center;
   margin-bottom: auto;
   border-color: $backgroundColor;
   border-width: 2px;
-}
+    }
 
-#card-title {
-  font-size: var(--fontsize-card-title);
-  font-weight: var(--fontweight-card-title);
-  background-color: $cardColor;
-}
 
-#card-button {
-  font-size: var(--fontsize-card-button);
-  font-weight: var(--fontweight-card-button);
-  color: #fcf951;
-}
+// #card-title {
+//   font-size: var(--fontsize-card-title);
+//   font-weight: var(--fontweight-card-title);
+//   background-color: $cardColor;
+// }
 
-.btn-link {
-    color: #fcf951;
-}
+// #card-button {
+//   font-size: var(--fontsize-card-button);
+//   font-weight: var(--fontweight-card-button);
+//   color: #fcf951;
+// }
+
+// .btn-link {
+//     color: #fcf951;
+// }
