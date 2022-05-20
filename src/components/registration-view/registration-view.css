@@ -7,18 +7,10 @@
 }
 
 .reistration-card {
-  background-color: #e5383b;
+  border-color: black;
 }
 
-.reistration-card {
-  background-color: #e5383b;
-}
-
-.card-title {
-  background-color: #e5383b;
-}
-
-.registration-form {
-  background-color: #e5383b;
+.card-body {
+  background-color: #ecacda;
 }
 /*# sourceMappingURL=registration-view.css.map */

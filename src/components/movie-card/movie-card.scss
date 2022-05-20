@@ -1,6 +1,6 @@
 $backgroundColor: #ffffff;
 $textColor: #f1fffa;
-$cardColor: #e5383b;
+$cardColor: #ecacda;
 
 :root {
   --fontsize-card-title: 20px;
@@ -26,10 +26,9 @@ $cardColor: #e5383b;
 
 #movie-card {
   text-align: center;
-  min-height: 500px;
-  margin-bottom: 50px;
-  border-color: $cardColor;
-  border-width: 10px;
+  margin-bottom: auto;
+  border-color: $backgroundColor;
+  border-width: 2px;
 }
 
 #card-title {
@@ -41,4 +40,9 @@ $cardColor: #e5383b;
 #card-button {
   font-size: var(--fontsize-card-button);
   font-weight: var(--fontweight-card-button);
+  color: #fcf951;
+}
+
+.btn-link {
+    color: #fcf951;
 }

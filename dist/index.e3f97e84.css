@@ -7,12 +7,12 @@
 
 * {
   box-sizing: border-box;
-  background-color: #e5383b;
+  background-color: #ecacda;
   font-family: League Spartan, sans-serif;
 }
 
 .card-body {
-  background-color: #e5383b;
+  background-color: #ecacda;
 }
 
 #card-button {
@@ -22,21 +22,25 @@
 
 #movie-card {
   text-align: center;
-  min-height: 500px;
-  border-width: 10px;
-  border-color: #e5383b;
-  margin-bottom: 50px;
+  border-width: 2px;
+  border-color: #fff;
+  margin-bottom: auto;
 }
 
 #card-title {
   font-size: var(--fontsize-card-title);
   font-weight: var(--fontweight-card-title);
-  background-color: #e5383b;
+  background-color: #ecacda;
 }
 
 #card-button {
   font-size: var(--fontsize-card-button);
   font-weight: var(--fontweight-card-button);
+  color: #fcf951;
+}
+
+.btn-link {
+  color: #fcf951;
 }
 
 :root {
@@ -97,6 +101,10 @@
   font-family: League Spartan, sans-serif;
 }
 
+.btn-link:hover {
+  color: #fcf951;
+}
+
 :root {
   --fontsize-navbar-brand: 30px;
   --fontsize-navbar-link: 20px;
@@ -145,9 +153,15 @@
   font-family: League Spartan, sans-serif;
 }
 
-.reistration-card, .card-title, .registration-form {
-  background-color: #e5383b;
+.reistration-card {
+  border-color: #000;
 }
+
+.card-body {
+  background-color: #ecacda;
+}
+
+
 
 #main-view {
   margin-top: 100px;

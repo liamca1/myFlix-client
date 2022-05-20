@@ -1,7 +1,10 @@
 import React from "react";
+import { Navbar, Container, Nav, Button, Offcanvas, NavDropdown, Form, FormControl } from 'react-bootstrap';
+
+import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './navbar-view.scss';
 
-import { Navbar, Container, Nav, Button, Offcanvas, NavDropdown, Form, FormControl } from 'react-bootstrap';
 
 
 export function NavbarView({user}) {
@@ -9,6 +12,17 @@ export function NavbarView({user}) {
     onLoggedOut = () => {
       localStorage.clear();
       window.open('/', '_self');
+    };
+
+    const isAuth = () => {
+      if(typeof window == "undefined") {
+        return false;
+      }
+      if(localStorage.getItem("token")) {
+        return localStorage.getItem("token");
+      } else {
+        return false;
+      }
     };
 
     return (
