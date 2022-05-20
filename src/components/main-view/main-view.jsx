@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Col, Row, Container } from 'react-bootstrap';
+import { Col, Row, Container, Button } from 'react-bootstrap';
 import "./main-view.scss";
 
 import { RegistrationView } from '../registration-view/registration-view';
@@ -21,17 +21,21 @@ export class MainView extends React.Component {
     };
   }
 
-  componentDidMount(){
-    axios.get('https://gathering-of-films.herokuapp.com/movies')
-      .then(response => {
-        this.setState({
-          movies: response.data
-        });
-      })
-      .catch(error => {
-        console.log(error);
+  getMovies(token) {
+    axios.get('https://gathering-of-films.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then(response => {
+      // Assign the result to the state
+      this.setState({
+        movies: response.data
       });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
+  
 
 /*When a movie is clicked, this function is invoked and updates the state of the `selectedMovie` *property to that movie*/
 
@@ -60,10 +64,20 @@ export class MainView extends React.Component {
     });
   }
 
+  componentDidMount() {
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user')
+      });
+      this.getMovies(accessToken);
+    }
+  }
+
    render() {
     const { movies, selectedMovie, user, register } = this.state;
 
-    if (!register) return <RegistrationView onRegistration={(register) => this.onRegistration(register)} />;
+    // if (!register) return <RegistrationView onRegistration={(register) => this.onRegistration(register)} />;
 
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
@@ -74,7 +88,6 @@ export class MainView extends React.Component {
       <Container>
         <Row>
           <NavbarView user={user} />
-
         </Row>
 
       <Row className="main-view">

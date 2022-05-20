@@ -6,9 +6,9 @@ import { Navbar, Container, Nav, Button, Offcanvas, NavDropdown, Form, FormContr
 
 export function NavbarView({user}) {
 
-    const onLoggedOut = () => {
-        localStorage.clear();
-        window.open('/', '_self');
+    onLoggedOut = () => {
+      localStorage.clear();
+      window.open('/', '_self');
     };
 
     return (
@@ -19,6 +19,7 @@ export function NavbarView({user}) {
             <Nav.Link id="nav-link" href="#home">Account</Nav.Link>
             <Nav.Link id="nav-link" href="#features">Watchlist</Nav.Link>
             <Nav.Link id="nav-link" href="#pricing">Register</Nav.Link>
+            <Nav.Link onClick={() => { this.onLoggedOut() }} id="nav-link" href="#logout">Logout</Nav.Link>
           </Nav>
           </Container>
         </Navbar>

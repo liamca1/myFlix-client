@@ -25122,12 +25122,17 @@ class MainView extends _reactDefault.default.Component {
             user: null
         };
     }
-    componentDidMount() {
-        _axiosDefault.default.get('https://gathering-of-films.herokuapp.com/movies').then((response)=>{
+    getMovies(token) {
+        _axiosDefault.default.get('https://gathering-of-films.herokuapp.com/movies', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            // Assign the result to the state
             this.setState({
                 movies: response.data
             });
-        }).catch((error)=>{
+        }).catch(function(error) {
             console.log(error);
         });
     }
@@ -25150,20 +25155,23 @@ class MainView extends _reactDefault.default.Component {
             register
         });
     }
+    componentDidMount() {
+        let accessToken = localStorage.getItem('token');
+        if (accessToken !== null) {
+            this.setState({
+                user: localStorage.getItem('user')
+            });
+            this.getMovies(accessToken);
+        }
+    }
     render() {
-        const { movies , selectedMovie , user: user1 , register: register1  } = this.state;
-        if (!register1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_registrationView.RegistrationView, {
-            onRegistration: (register)=>this.onRegistration(register)
-        }, void 0, false, {
-            fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 66,
-            columnNumber: 27
-        }, this);
+        const { movies , selectedMovie , user: user1 , register  } = this.state;
+        // if (!register) return <RegistrationView onRegistration={(register) => this.onRegistration(register)} />;
         if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
             onLoggedIn: (user)=>this.onLoggedIn(user)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 68,
+            lineNumber: 82,
             columnNumber: 23
         }, this);
         // Before the movies have been loaded
@@ -25171,7 +25179,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 71,
+            lineNumber: 85,
             columnNumber: 37
         }, this);
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
@@ -25181,12 +25189,12 @@ class MainView extends _reactDefault.default.Component {
                         user: user1
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 76,
+                        lineNumber: 90,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 75,
+                    lineNumber: 89,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Row, {
@@ -25204,17 +25212,17 @@ class MainView extends _reactDefault.default.Component {
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 85,
+                                lineNumber: 98,
                                 columnNumber: 17
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 84,
+                            lineNumber: 97,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 83,
+                        lineNumber: 96,
                         columnNumber: 13
                     }, this) : /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Row, {
                         className: "justify-content-md-center",
@@ -25225,24 +25233,24 @@ class MainView extends _reactDefault.default.Component {
                                 }
                             }, movie._id, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 92,
+                                lineNumber: 105,
                                 columnNumber: 17
                             }, this)
                         )
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 90,
+                        lineNumber: 103,
                         columnNumber: 15
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 80,
+                    lineNumber: 93,
                     columnNumber: 7
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 74,
+            lineNumber: 88,
             columnNumber: 7
         }, this);
     }
@@ -39412,7 +39420,7 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _navbarViewScss = require("./navbar-view.scss");
 var _reactBootstrap = require("react-bootstrap");
 function NavbarView({ user  }) {
-    const onLoggedOut = ()=>{
+    onLoggedOut = ()=>{
         localStorage.clear();
         window.open('/', '_self');
     };
@@ -39460,6 +39468,18 @@ function NavbarView({ user  }) {
                         }, void 0, false, {
                             fileName: "src/components/navbar-view/navbar-view.jsx",
                             lineNumber: 21,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
+                            onClick: ()=>{
+                                this.onLoggedOut();
+                            },
+                            id: "nav-link",
+                            href: "#logout",
+                            children: "Logout"
+                        }, void 0, false, {
+                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                            lineNumber: 22,
                             columnNumber: 13
                         }, this)
                     ]
