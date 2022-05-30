@@ -44849,7 +44849,6 @@ function Navbar({ user  }) {
         window.open('/', '_self');
     };
     return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar, {
-        bg: "light",
         expand: "lg",
         className: "mb-5",
         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
@@ -44859,12 +44858,21 @@ function Navbar({ user  }) {
                     children: [
                         isAuth() && /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_react.Fragment, {
                             children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Brand, {
+                                    id: "navbar-brand",
+                                    href: "/",
+                                    children: "Gathering"
+                                }, void 0, false, {
+                                    fileName: "src/components/navbar/navbar.jsx",
+                                    lineNumber: 27,
+                                    columnNumber: 17
+                                }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
                                     href: "/",
                                     children: "Home"
                                 }, void 0, false, {
                                     fileName: "src/components/navbar/navbar.jsx",
-                                    lineNumber: 27,
+                                    lineNumber: 28,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
@@ -44872,7 +44880,7 @@ function Navbar({ user  }) {
                                     children: "Profile"
                                 }, void 0, false, {
                                     fileName: "src/components/navbar/navbar.jsx",
-                                    lineNumber: 28,
+                                    lineNumber: 29,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
@@ -44880,7 +44888,7 @@ function Navbar({ user  }) {
                                     children: "Logout"
                                 }, void 0, false, {
                                     fileName: "src/components/navbar/navbar.jsx",
-                                    lineNumber: 29,
+                                    lineNumber: 30,
                                     columnNumber: 17
                                 }, this)
                             ]
@@ -44896,7 +44904,7 @@ function Navbar({ user  }) {
                                     children: "Sign-in"
                                 }, void 0, false, {
                                     fileName: "src/components/navbar/navbar.jsx",
-                                    lineNumber: 34,
+                                    lineNumber: 35,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
@@ -44904,13 +44912,13 @@ function Navbar({ user  }) {
                                     children: "Sign-up"
                                 }, void 0, false, {
                                     fileName: "src/components/navbar/navbar.jsx",
-                                    lineNumber: 35,
+                                    lineNumber: 36,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/navbar/navbar.jsx",
-                            lineNumber: 33,
+                            lineNumber: 34,
                             columnNumber: 13
                         }, this)
                     ]
@@ -45462,7 +45470,7 @@ function RegistrationView(props) {
                             controlId: "formEmail",
                             children: [
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_.Form.Label, {
-                                    children: "Password:"
+                                    children: "Email:"
                                 }, void 0, false, {
                                     fileName: "src/components/registration-view/registration-view.jsx",
                                     lineNumber: 88,
@@ -45497,7 +45505,7 @@ function RegistrationView(props) {
                             controlId: "formBirthday",
                             children: [
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_.Form.Label, {
-                                    children: "Password:"
+                                    children: "Birthday:"
                                 }, void 0, false, {
                                     fileName: "src/components/registration-view/registration-view.jsx",
                                     lineNumber: 94,
@@ -45508,7 +45516,7 @@ function RegistrationView(props) {
                                     value: birthday,
                                     onChange: (e)=>setBirthday(e.target.value)
                                     ,
-                                    placeholder: "YYYY-MM-DD"
+                                    placeholder: "DD-MM-YYYY"
                                 }, void 0, false, {
                                     fileName: "src/components/registration-view/registration-view.jsx",
                                     lineNumber: 95,

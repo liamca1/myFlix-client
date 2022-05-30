@@ -18,13 +18,13 @@ export function Navbar({user}) {
   }
 
   return (
-    <Navbar bg="light" expand="lg" className="mb-5">
+    <Navbar expand="lg" className="mb-5">
       <Container>
         <Navbar>
             <Nav className="me-auto">
             {isAuth() &&
             <Fragment>
-                <Nav.
+                <Navbar.Brand id="navbar-brand" href="/">Gathering</Navbar.Brand>
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href={`/users/${user}`}>Profile</Nav.Link>
                 <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>

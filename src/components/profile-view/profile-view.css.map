@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "registration-view.scss"
+        "profile-view.scss"
     ],
     "names": [],
-    "file": "registration-view.css"
+    "file": "profile-view.css"
 }
