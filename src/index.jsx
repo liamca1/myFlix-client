@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import ReactDOM from 'react-dom';
-import { MainView } from './components/main-view/main-view';
+import MainView from './components/main-view/main-view';
 import Container from 'react-bootstrap/Container';
 
 
@@ -18,8 +19,17 @@ class MyFlixApplication extends React.Component {
   }
 }
 
-// Finds the root of your app
+// const rootElement = document.getElementById("root");
+// const root = createRoot(rootElement);
+
+// root.render(
+//   <StrictMode>
+//     <MainView />
+//   </StrictMode>
+// );
+
+// // Finds the root of your app
 const container = document.getElementsByClassName('app-container')[0];
 
-// Tells React to render your app in the root DOM element
+// // Tells React to render your app in the root DOM element
 ReactDOM.render(React.createElement(MyFlixApplication), container);

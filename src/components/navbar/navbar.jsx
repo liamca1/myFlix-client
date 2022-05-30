@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Navbar, Container, Nav } from 'react-bootstrap';
+import { Navbar, Navlink, Container, Nav } from 'react-bootstrap';
 
 export function Navbar({user}) {
 
@@ -20,14 +20,14 @@ export function Navbar({user}) {
   return (
     <Navbar bg="light" expand="lg" className="mb-5">
       <Container>
-        <Navbar.Toggle aria-controls="navbar-nav" />
-        <Navbar.Collapse>
+        <Navbar>
             <Nav className="me-auto">
             {isAuth() &&
             <Fragment>
+                <Nav.
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href={`/users/${user}`}>Profil</Nav.Link>
-                <Nav.Link onClick={onLoggedOut}>Sign-out</Nav.Link>
+                <Nav.Link href={`/users/${user}`}>Profile</Nav.Link>
+                <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
               </Fragment>
             }
             {!isAuth() &&
@@ -37,7 +37,7 @@ export function Navbar({user}) {
             </Fragment>
             }
             </Nav>
-        </Navbar.Collapse>
+        </Navbar>
       </Container>
     </Navbar>
   )

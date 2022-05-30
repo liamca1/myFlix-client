@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import { CardGroup, Container, Button, Card, Col, Row } from "react-bootstrap";
 
@@ -19,7 +20,7 @@ export class MovieCard extends React.Component {
     })
     .then((response) => {
       console.log(response.data)
-      alert(`The movie was successfully add to your list.`)
+      alert(`The movie was successfully added to your list.`)
     }).
     catch(error => console.error(error))
   }
