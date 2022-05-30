@@ -7,13 +7,13 @@ import { Button, Card, Col } from 'react-bootstrap';
 
 import './profile-view.scss';
 
-export function FavoriteMoviesView(props) {
-  const { movies, favoriteMovies, currentUser, token } = props;
+export function FavouriteMoviesView(props) {
+  const { movies, favouriteMovies, currentUser, token } = props;
 
-  const favoriteMoviesId = favoriteMovies.map(m => m._id)
+  const favouriteMoviesId = favouriteMovies.map(m => m._id)
 
-  const favoriteMoviesList = movies.filter(m => {
-    return favoriteMoviesId.includes(m._id)
+  const favouriteMoviesList = movies.filter(m => {
+    return favouriteMoviesId.includes(m._id)
   })
 
   const handleMovieDelete = (movieId) => {
@@ -29,10 +29,10 @@ export function FavoriteMoviesView(props) {
 
   return (
     <Fragment>
-      {favoriteMoviesList.length === 0 ? (
-          <p>You have no favorite movies yet.</p>
+      {favouriteMoviesList.length === 0 ? (
+          <p>You have no favourite movies yet.</p>
           ) : (
-            favoriteMoviesList.map((movie) => {
+            favouriteMoviesList.map((movie) => {
               return (
               <Col xs={10} sm={8} md={6} lg={4} >
                 <Card id="movie-card">

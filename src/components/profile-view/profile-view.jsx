@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { Button, Col, Container, Row } from 'react-bootstrap';
 
-import { FavoriteMoviesView } from './favorite-movie-view';
+import { FavouriteMoviesView } from './favourite-movie-view';
 import { UpdateView } from './update-view';
 
 import './profile-view.scss';
@@ -12,7 +12,7 @@ import './profile-view.scss';
 export function ProfileView(props) {
   const [ user, setUser ] = useState(props.user);
   const [ movies, setMovies ] = useState(props.movies);
-  const [ favoriteMovies, setFavoriteMovies ] = useState([]);
+  const [ favouriteMovies, setFavouriteMovies ] = useState([]);
   const currentUser = localStorage.getItem('user');
   const token = localStorage.getItem('token');
 
@@ -22,7 +22,7 @@ export function ProfileView(props) {
     })
     .then(response => {
       setUser(response.data);
-      setFavoriteMovies(response.data.FavoriteMovies)
+      setFavouriteMovies(response.data.FavouriteMovies)
     })
     .catch(error => console.error(error))
   }
@@ -62,11 +62,11 @@ export function ProfileView(props) {
         <Col className="label">Birthday:</Col>
         <Col className="value">{user.Birthday}</Col>
         </Row>
-        <Row className="mt-5"><h4>Your favorite movies</h4></Row>
+        <Row className="mt-5"><h4>Your favourite movies</h4></Row>
         <Row className="mt-3">
-          <FavoriteMoviesView 
+          <FavouriteMoviesView 
           movies={movies} 
-          favoriteMovies={favoriteMovies} 
+          favouriteMovies={favouriteMovies} 
           currentUser={currentUser} 
           token={token}/>
         </Row>

@@ -10,7 +10,7 @@ import "./movie-card.scss";
 
 export class MovieCard extends React.Component {
 
-  addToFavoriteList(movieId) {
+  addToFavouriteList(movieId) {
     const currentUser = localStorage.getItem('user');
     const token = localStorage.getItem('token');
     axios.put(`https://gathering-of-films.herokuapp.com/users/${currentUser}/movies/${movieId}`, 
@@ -39,7 +39,7 @@ export class MovieCard extends React.Component {
           <Link to={`/movies/${movie._id}`}>
             <Button className="button" variant="outline-primary" size="sm">Open</Button>
           </Link>
-          <Button className="button ml-2" variant="outline-primary" size="sm" onClick={() => this.addToFavoriteList(movie._id) }>Add</Button>
+          <Button className="button ml-2" variant="outline-primary" size="sm" onClick={() => this.addToFavouriteList(movie._id) }>Add</Button>
         </Card.Body>
       </Card>
     )
