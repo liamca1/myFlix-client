@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  color: #f1fffa;
+  background-color: #ecacda;
+  font-family: League Spartan, sans-serif;
+}
+
+.main-view {
+  background-color: #ecacda;
+}
+
+#main-view {
+  margin-top: 100px;
+}
+
+/*# sourceMappingURL=index.2b25e0b4.css.map */

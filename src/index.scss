@@ -1,3 +1,17 @@
+$backgroundColor: #ecacda;
+
+
 #main-view {
     margin-top: 100px;
+    background-color: $backgroundColor;
+
 }
+
+.body {
+    background-color: $backgroundColor;
+
+}
+
+* {
+    background-color: $backgroundColor;
+  }
