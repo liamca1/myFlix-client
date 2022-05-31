@@ -8,10 +8,17 @@
 
 
 
+.container {
+  border-style: solid;
+  border-width: 1px;
+  margin: 10px;
+}
 
 
 
-
-
+.main-view {
+  background-color: #fff;
+  font-family: DM Sans, sans-serif;
+}
 
 /*# sourceMappingURL=index.2b25e0b4.css.map */

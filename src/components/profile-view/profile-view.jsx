@@ -6,6 +6,8 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 
 import { FavouriteMoviesView } from './favourite-movie-view';
 import { UpdateView } from './update-view';
+import { UserInfo } from './user-info';
+
 
 import './profile-view.scss';
 
@@ -45,23 +47,7 @@ export function ProfileView(props) {
 
   return (
     <Container id="profile-form">
-      <Row><h4>Your profile</h4></Row>
-      <Row>
-        <Col className="label">Username:</Col>
-        <Col className="value">{user.Username}</Col>
-        </Row>
-        <Row className="mt-3">
-        <Col className="label">Password:</Col>
-        <Col className="value">******</Col>
-        </Row>
-        <Row className="mt-3">
-        <Col className="label">Email:</Col>
-        <Col className="value">{user.Email}</Col>
-        </Row>
-        <Row className="mt-3">
-        <Col className="label">Birthday:</Col>
-        <Col className="value">{user.Birthday}</Col>
-        </Row>
+        <UserInfo name={user.Username} email={user.Email}/>
         <Row className="mt-5"><h4>Your favourite movies</h4></Row>
         <Row className="mt-3">
           <FavouriteMoviesView 

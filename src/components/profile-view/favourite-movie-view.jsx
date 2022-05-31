@@ -41,12 +41,11 @@ export function FavouriteMoviesView(props) {
                   </Link>
                   <Card.Body>
                     <Card.Title>{movie.Title}</Card.Title>
-                    <Card.Text>{movie.Description}</Card.Text>
+                    {/* <Card.Text>{movie.Description}</Card.Text> */}
                     <Link to={`/movies/${movie._id}`}>
-                      <Button className="button" variant="outline-primary" size="sm">Open</Button>
+                      <Button id="favourite-button-open" variant="outline-primary" size="sm">Open</Button>
                     </Link>
-                    <Button 
-                    className="button ml-2" 
+                    <Button id="favourite-button-remove"
                     variant="outline-primary" 
                     size="sm" onClick={()=> {handleMovieDelete(movie._id)}} >
                       Remove

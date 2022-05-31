@@ -18,27 +18,25 @@ export function Navbar({user}) {
   }
 
   return (
-    <Navbar expand="lg" className="mb-5">
-      <Container>
-        <Navbar>
-            <Nav className="me-auto">
-            {isAuth() &&
-            <Fragment>
-                <Navbar.Brand id="navbar-brand" href="/">Gathering</Navbar.Brand>
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href={`/users/${user}`}>Profile</Nav.Link>
-                <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
-              </Fragment>
-            }
-            {!isAuth() &&
-            <Fragment>
-              <Nav.Link href={'/login'}>Sign-in</Nav.Link>
-              <Nav.Link href={'/register'}>Sign-up</Nav.Link>
-            </Fragment>
-            }
-            </Nav>
-        </Navbar>
-      </Container>
-    </Navbar>
+    <Container>
+      <Navbar>
+        <Nav className="justify-content-end">
+        {isAuth() &&
+        <Fragment>
+            <Navbar.Brand id="navbar-brand" href="/">Gathering</Navbar.Brand>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href={`/users/${user}`}>Profile</Nav.Link>
+            <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
+          </Fragment>
+        }
+        {!isAuth() &&
+        <Fragment>
+          <Nav.Link href={'/login'}>Sign-in</Nav.Link>
+          <Nav.Link href={'/register'}>Sign-up</Nav.Link>
+        </Fragment>
+        }
+        </Nav>
+      </Navbar>
+    </Container>
   )
 }
