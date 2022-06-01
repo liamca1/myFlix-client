@@ -1,0 +1,20 @@
+.movie-card-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    color: rgb(0, 0, 0);
+}
+
+.movie-card-img {
+    opacity: 50%;
+    filter: grayscale(100%);
+    width: 100%;
+}
+
+.card-img-overlay {
+    width: 100%;
+    height: 100%;
+}
+

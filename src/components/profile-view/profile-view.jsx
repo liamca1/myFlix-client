@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Row, Stack } from 'react-bootstrap';
 
 import { FavouriteMoviesView } from './favourite-movie-view';
 import { UpdateView } from './update-view';
@@ -33,31 +33,43 @@ export function ProfileView(props) {
     getUser();
   }, [])
 
-  const handleDelete = () => {
-    axios.delete(`https://gathering-of-films.herokuapp.com/users/${currentUser}`, {
-      headers: { Authorization: `Bearer ${token}`}
-    })
-    .then(() => {
-      alert(`The account ${user.Username} was successfully deleted.`)
-      localStorage.clear();
-      window.open('/register', '_self');
-    }).
-    catch(error => console.error(error))
-  }
+
 
   return (
-    <Container id="profile-form">
-        <UserInfo name={user.Username} email={user.Email}/>
-        <Row className="mt-5"><h4>Your favourite movies</h4></Row>
-        <Row className="mt-3">
-          <FavouriteMoviesView 
-          movies={movies} 
-          favouriteMovies={favouriteMovies} 
-          currentUser={currentUser} 
-          token={token}/>
+    <Container>
+      <Stack gap={3}>
+        
+        <Row>
+          <Card>
+            <Card.Body>
+              <Col xs={12} sm={4}>
+                <UserInfo name={user.Username} email={user.Email}/>
+              </Col>
+            </Card.Body>
+          </Card>
         </Row>
-        <UpdateView user={user}/>
-        <Button className="d-block mt-5" variant="warning" onClick={handleDelete}>Delete profile</Button>
+
+        <Row>
+          <Card>
+            <Card.Body>
+                <FavouriteMoviesView 
+                movies={movies} 
+                favouriteMovies={favouriteMovies} 
+                currentUser={currentUser} 
+                token={token}/>
+            </Card.Body>
+          </Card>
+        </Row>
+
+        <Row>
+          <Card>
+            <Card.Body>
+              <UpdateView user={user}/>
+            </Card.Body>
+          </Card>
+        </Row>
+        
+      </Stack>
     </Container>
   )
 }

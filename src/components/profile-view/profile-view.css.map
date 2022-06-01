@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,UAAU,CAAC;EACP,YAAY,EAAE,KAAK;EACnB,YAAY,EAAE,GAAG;EACjB,UAAU,EAAE,EAAE;EACd,aAAa,EAAE,EAAE;EACjB,YAAY,EAAE,EAAE;EAChB,WAAW,EAAE,EAAE;CAChB",
+    "mappings": "",
     "sources": [
         "profile-view.scss"
     ],

@@ -23,7 +23,7 @@ export function Navbar({user}) {
         <Nav className="justify-content-end">
         {isAuth() &&
         <Fragment>
-            <Navbar.Brand id="navbar-brand" href="/">Gathering</Navbar.Brand>
+            <Navbar.Brand id="navbar-brand" href="/">Gathering of Films</Navbar.Brand>
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href={`/users/${user}`}>Profile</Nav.Link>
             <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>

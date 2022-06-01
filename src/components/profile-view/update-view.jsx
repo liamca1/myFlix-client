@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Col, Container, Form, Row, Stack } from 'react-bootstrap';
 
 import './profile-view.scss';
 
@@ -70,40 +70,56 @@ export function UpdateView(props) {
     }
   };
 
+  const handleDelete = () => {
+    axios.delete(`https://gathering-of-films.herokuapp.com/users/${currentUser}`, {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then(() => {
+      alert(`The account ${user.Username} was successfully deleted.`)
+      localStorage.clear();
+      window.open('/register', '_self');
+    }).
+    catch(error => console.error(error))
+  }
+
   return (
     <Container id="update-form" className="mt-5">
-      <Row><h4>Edit profile</h4></Row>
-      <Row>
+      <Row><h4>Update profile</h4></Row>
+      
+        <Row>
         <Col sm="10" md="8" lg="6">
           <Form>
+          <Stack gap={3}>
             <Form.Group controlId="formUsername">
               <Form.Label>Username:</Form.Label>
               <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" required/>
               {/* display validation error */}
               {values.usernameErr && <p>{values.usernameErr}</p>}
-              </Form.Group>
-              <Form.Group controlId="formPassword">
+            </Form.Group>
+            <Form.Group controlId="formPassword">
                 <Form.Label>Password:</Form.Label>
                 <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" required />
                 {/* display validation error */}
                 {values.passwordErr && <p>{values.passwordErr}</p>}
-              </Form.Group>
-              <Form.Group controlId="formEmail">
-                <Form.Label>Password:</Form.Label>
+            </Form.Group>
+            <Form.Group controlId="formEmail">
+                <Form.Label>Email:</Form.Label>
                 <Form.Control type="text" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@mail.com" required />
                 {/* display validation error */}
                 {values.emailErr && <p>{values.emailErr}</p>}
-              </Form.Group>
-              <Form.Group controlId="formBirthday">
-                <Form.Label>Password:</Form.Label>
-                <Form.Control type="text" value={birthday} onChange={e => setBirthday(e.target.value)} placeholder="YYYY-MM-DD" />
-              </Form.Group>
-              <Form.Group controlId="formBirthday" className="mt-3">
+            </Form.Group>
+            <Form.Group>
+              <Stack direction="horizontal" gap={3}>
                 <Button  variant="warning" type="submit" onClick={handleSubmit}>Edit profile</Button>
-              </Form.Group>
+                <Button variant="danger" onClick={handleDelete}>Delete profile</Button>
+              </Stack>
+            </Form.Group>
+          </Stack>
           </Form>
         </Col>
-      </Row>
+        </Row>
+        
+     
     </Container>
   )
 }

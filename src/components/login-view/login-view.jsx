@@ -4,6 +4,9 @@ import axios from 'axios';
 
 import { Button, Col, Container, Form, Row } from 'react-bootstrap/';
 
+import { connect } from 'react-redux';
+import { setUser } from '../../actions/actions';
+
 import './login-view.scss';
 
 export function LoginView(props) {
@@ -35,6 +38,7 @@ export function LoginView(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const isReq = validate();
+    
     if (isReq) {
       // Send a request to the server for authentication
       axios.post('https://gathering-of-films.herokuapp.com/login', {
@@ -87,3 +91,11 @@ LoginView.propTypes = {
   }),
   onLoggedIn: PropTypes.func.isRequired
 }
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user
+  };
+}
+
+export default connect(mapStateToProps, { setUser })(LoginView);

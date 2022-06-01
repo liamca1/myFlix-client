@@ -92,7 +92,7 @@ export function RegistrationView(props) {
             </Form.Group>
             <Form.Group controlId="formBirthday">
               <Form.Label>Birthday:</Form.Label>
-              <Form.Control type="text" value={birthday} onChange={e => setBirthday(e.target.value)} placeholder="DD-MM-YYYY" />
+              <Form.Control type="text" value={birthday} onChange={e => setBirthday(e.target.value)} placeholder="YYYY-MM-DD" />
             </Form.Group>
             <Row className="mt-3 justify-content-start">
               <Col sm="10" md="8" lg="6">
