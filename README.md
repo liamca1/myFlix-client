@@ -1,4 +1,4 @@
-myFlix client Application
+<h1>myFlix client Application<h1>
 
 This is the client side application for a film API made with Angular. Users can create an account, update their details, and delete their account. They can get information about films and save films to a list of their favourites.
 
